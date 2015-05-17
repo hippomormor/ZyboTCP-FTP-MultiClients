@@ -67,7 +67,7 @@ public class SensorHandler
         {
             if (sensors.get(sensorNumber - 1).sampleRate > 1)
             {
-                sensors.get(sensorNumber - 1).sampleRate = (2 / sensors.get(sensorNumber - 1).sampleRate);
+                sensors.get(sensorNumber - 1).sampleRate = (sensors.get(sensorNumber - 1).sampleRate / 2);
                 String answer = "Successful, Sensor " + sensorNumber + " now has an update rate of " + sensors.get(sensorNumber - 1).sampleRate + " Seconds";
                 System.out.println(answer);
                 return answer;
