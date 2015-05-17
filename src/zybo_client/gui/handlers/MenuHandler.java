@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MenuHandler implements Runnable
 {
@@ -129,12 +131,13 @@ public class MenuHandler implements Runnable
             {               
                 tcpUp = isTcpUp(InetAddress.getByName(ip));
                 ftpUp = isFtpUp(InetAddress.getByName(ip));            
-                Thread.sleep(10000);
+                Thread.sleep(1000);
             }
-            catch (Exception ex)
+            catch (IOException | InterruptedException ex)
             {
-                ex.printStackTrace();
+                Logger.getLogger(MenuHandler.class.getName()).log(Level.SEVERE, null, ex);
             }
+
         }
     }
 }

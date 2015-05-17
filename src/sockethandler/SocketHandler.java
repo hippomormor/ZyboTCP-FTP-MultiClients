@@ -62,9 +62,10 @@ public class SocketHandler
             socket.close();
             
         }
-        catch (IOException e)
+        catch (IOException ex)
         {
-            e.printStackTrace();
+            ex.printStackTrace();
         }
+
     } 
 }

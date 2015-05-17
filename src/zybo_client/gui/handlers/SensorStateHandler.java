@@ -28,13 +28,9 @@ public class SensorStateHandler implements Runnable
                 sensors = tcp.send("GSTAT");
                 Thread.sleep(300);
             }
-            catch (IOException ex)
+            catch (IOException | InterruptedException ex)
             {
                 ex.printStackTrace();
-            }
-            catch (InterruptedException ex)
-            {
-                Logger.getLogger(SensorStateHandler.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 

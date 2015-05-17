@@ -64,7 +64,6 @@ public class FtpHandler extends SocketHandler
     {
         SocketHandler socket = getPassiveSocket();
         String msg = send(out);     
-        // Return on error messages (500-699):
         if (msg.contains("550 Failed to open file"))
             return msg;       
         StringBuilder sb = new StringBuilder();

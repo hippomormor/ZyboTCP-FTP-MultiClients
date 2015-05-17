@@ -52,12 +52,12 @@ public class JPanelMenu extends javax.swing.JPanel implements Runnable
         }
         while (true)
         {
-            // Keep checking up-state every 10 seconds and update panel:
+            // Keep checking up-state every 1 seconds and update panel:
             String msg = handler.testUpState();
             setText(msg);
             try
             {
-                Thread.sleep(10000);
+                Thread.sleep(1000);
             }
             catch (InterruptedException ex)
             {
