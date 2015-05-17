@@ -26,7 +26,7 @@ public class SensorStateHandler implements Runnable
             try
             {
                 sensors = tcp.send("GSTAT");
-                Thread.sleep(3000);
+                Thread.sleep(300);
             }
             catch (IOException ex)
             {
