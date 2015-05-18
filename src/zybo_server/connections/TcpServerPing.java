@@ -38,7 +38,9 @@ public class TcpServerPing implements Runnable
                     socketHandler.disconnect();
                     break;
                 }
-            }           
+                break;
+            }
+            break;
         }
     }
 }
