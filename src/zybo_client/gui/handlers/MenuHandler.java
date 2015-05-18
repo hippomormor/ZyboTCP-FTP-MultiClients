@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class MenuHandler implements Runnable
 {
@@ -130,12 +128,21 @@ public class MenuHandler implements Runnable
             try
             {               
                 tcpUp = isTcpUp(InetAddress.getByName(ip));
+                if (!tcpUp)
+                    try
+                    {
+                        jpc.setTextTcp("Connection to server lost. Please reconnect.");
+                    }
+                    catch (Exception e)
+                    {
+                        System.out.println("yay");
+                    }
                 ftpUp = isFtpUp(InetAddress.getByName(ip));            
                 Thread.sleep(3000);
             }
             catch (IOException | InterruptedException ex)
             {
-                Logger.getLogger(MenuHandler.class.getName()).log(Level.SEVERE, null, ex);
+                ex.printStackTrace();
             }
 
         }

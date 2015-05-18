@@ -16,7 +16,7 @@ public class JPanelCreator
     private final String ip;
     private static JPanelMenu mainPanel;
     private JPanelFtpMenu ftpPanel;
-    private JPanelTcpMenu tcpPanel;
+    private static JPanelTcpMenu tcpPanel;
 
     public JPanelCreator(String ip) throws InterruptedException
     {
@@ -112,5 +112,10 @@ public class JPanelCreator
         // Start mainPanel thread:
         Thread main = new Thread(mainPanel);
         main.start();
+    }
+    
+    public void setTextTcp(String text)
+    {
+        tcpPanel.setText(text);
     }
 }
