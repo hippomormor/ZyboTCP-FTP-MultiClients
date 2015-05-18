@@ -11,12 +11,6 @@ public class TcpMenuHandler
     {
         tcp = new TcpHandler(ip, port);
     }
-    
-    public String connectFirst(String ip, int port) throws IOException
-    {
-        tcp = new TcpHandler(ip, port);
-        return tcp.readLine();
-    }   
 
     public String getList() throws IOException
     {
@@ -56,6 +50,12 @@ public class TcpMenuHandler
     public String status() throws IOException
     {
         String output = "STAT";
+        return tcp.send(output);
+    }
+    
+    public String getStatus() throws IOException
+    {
+        String output = "GSTAT";
         return tcp.send(output);
     }
     

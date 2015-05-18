@@ -24,7 +24,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
         setText("Connected on " + ip + ":" + 8001 + " (TCP)\n");
         // Boolean-array to hold sensor-states:
         sensorStates = new boolean[5];
-        ssHandler = new SensorStateHandler(ip);
+        ssHandler = new SensorStateHandler(ip, handler);
         Thread ssH = new Thread(ssHandler);
         ssH.start();
     }

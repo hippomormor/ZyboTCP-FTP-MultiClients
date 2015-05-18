@@ -26,19 +26,19 @@ public class SampleHandler implements Runnable
 
     public synchronized void saveToFile() throws IOException
     {
-        //if (new File("SensorData.log").exists())
-        if (new File("/home/xilinx/SensorData.log").exists())
+        if (new File("SensorData.log").exists())
+        //if (new File("/home/xilinx/SensorData.log").exists())
         {
-            FileWriter file = new FileWriter("/home/xilinx/SensorData.log", true);
-            //FileWriter file = new FileWriter("SensorData.log", true);
+            //FileWriter file = new FileWriter("/home/xilinx/SensorData.log", true);
+            FileWriter file = new FileWriter("SensorData.log", true);
             PrintWriter out = new PrintWriter(file);
             out.println(date.format(new Date()) + " - Value of " + sensorName + " = " + sampleValue + " (" + sampleRate + " sec. sample rate)");
             out.close();
         }
         else
         {
-            FileWriter file = new FileWriter("/home/xilinx/SensorData.log");
-            //FileWriter file = new FileWriter("SensorData.log");
+            //FileWriter file = new FileWriter("/home/xilinx/SensorData.log");
+            FileWriter file = new FileWriter("SensorData.log");
             PrintWriter out = new PrintWriter(file);
             out.println(date.format(new Date()) + " - Value of " + sensorName + " = " + sampleValue + " (" + sampleRate + " sec. sample rate)");
             out.close();

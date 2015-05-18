@@ -1,18 +1,17 @@
 package zybo_client.gui.handlers;
 
 import java.io.IOException;
-import zybo_client.tcp.TcpHandler;
 
 public class SensorStateHandler implements Runnable
 {
 
     private static String sensors;
-    private TcpHandler tcp;
+    private final TcpMenuHandler tcp;
 
-    public SensorStateHandler(String ip) throws IOException
+    public SensorStateHandler(String ip, TcpMenuHandler handler) throws IOException
     {
         sensors = "";
-        tcp = new TcpHandler(ip, 8001);
+        tcp = handler;
     }
 
     @Override
@@ -23,17 +22,12 @@ public class SensorStateHandler implements Runnable
         {
             try
             {
-                sensors = tcp.send("GSTAT");
+                sensors = tcp.getStatus();
                 Thread.sleep(300);
             }
-            catch (IOException ex)
+            catch (IOException | InterruptedException ex) 
             {
-                System.out.println("Server down. Please reconnect.");
                 break;
-            } 
-            catch (InterruptedException ex) 
-            {
-                ex.printStackTrace();
             }
         }
 

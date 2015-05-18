@@ -33,14 +33,10 @@ public class TcpServerPing implements Runnable
             {
                 Socket connectionSocket = welcomeSocket.accept();
                 socketHandler = new SocketHandler(connectionSocket);
-                while (true)
-                {
-                    socketHandler.disconnect();
-                    break;
-                }
+                socketHandler.disconnect();
+                welcomeSocket.close();
                 break;
             }
-            break;
         }
     }
 }
