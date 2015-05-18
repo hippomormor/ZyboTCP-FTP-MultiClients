@@ -508,7 +508,8 @@ public class JPanelTcpMenu extends javax.swing.JPanel
         g.drawOval(c.getX() - 15, c.getY() + 6, 10, 10);
     }
 
-    public void paintStates(Graphics g) throws IOException, InterruptedException
+    public void paintStates(Graphics g) throws IOException, 
+            InterruptedException
     {
         Component button = null;
         String states = ssHandler.getStates();
@@ -547,13 +548,9 @@ public class JPanelTcpMenu extends javax.swing.JPanel
         {
             paintStates(g);
         }
-        catch (IOException ex)
+        catch (IOException | InterruptedException ex)
         {
             ex.printStackTrace();
-        }
-        catch (InterruptedException ex)
-        {
-            Logger.getLogger(JPanelTcpMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
