@@ -64,7 +64,7 @@ public class SocketHandler
         }
         catch (IOException ex)
         {
-            ex.printStackTrace();
+            System.out.println("Socket closed.");
         }
 
     } 

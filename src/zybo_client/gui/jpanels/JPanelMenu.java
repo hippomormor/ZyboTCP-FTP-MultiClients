@@ -12,7 +12,7 @@ public class JPanelMenu extends javax.swing.JPanel implements Runnable
     private static boolean isOpenFtp;
     private static boolean isOpenTcp;
 
-    public JPanelMenu(String ip)
+    public JPanelMenu(String ip) throws InterruptedException
     {
         this.ip = ip;
         // Create MenuHandler:
@@ -226,9 +226,18 @@ public class JPanelMenu extends javax.swing.JPanel implements Runnable
      
     public void setFtpOpen()
     {
-        isOpenFtp = !isOpenFtp;        
+        isOpenFtp = !isOpenFtp;
     }
-
+    
+    public boolean getTcpOpen()
+    {
+        return isOpenTcp;
+    }
+     
+    public boolean getFtpOpen()
+    {
+        return isOpenFtp;        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ConnectFTPButton;

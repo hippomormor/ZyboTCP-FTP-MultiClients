@@ -15,8 +15,9 @@ public class JPanelCreator
 
     private final String ip;
     private static JPanelMenu mainPanel;
-    private JPanelFtpMenu ftpPanel;
+    private static JPanelFtpMenu ftpPanel;
     private static JPanelTcpMenu tcpPanel;
+    
 
     public JPanelCreator(String ip) throws InterruptedException
     {
@@ -116,6 +117,25 @@ public class JPanelCreator
     
     public void setTextTcp(String text)
     {
-        tcpPanel.setText(text);
+        if (mainPanel.getTcpOpen())
+            tcpPanel.setText(text);
+    }
+    
+    public void setTextFtp(String text)
+    {
+        if (mainPanel.getFtpOpen())
+            ftpPanel.setText(text);
+    }
+    
+    public void disconnectFtp()
+    {
+        if (mainPanel.getFtpOpen())
+            ftpPanel.disconnect();
+    }
+    
+    public void disconnectTcp()
+    {
+        if (mainPanel.getTcpOpen())
+            tcpPanel.disconnect();
     }
 }

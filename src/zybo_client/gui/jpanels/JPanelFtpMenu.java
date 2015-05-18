@@ -175,8 +175,7 @@ public class JPanelFtpMenu extends javax.swing.JPanel
         }
         catch (IOException ex)
         {
-            ex.printStackTrace();
-            appendText("\nUnable to get list of commands");
+            setText("Connection to server lost. Please reconnect.");
         }        
     }//GEN-LAST:event_HelpButtonActionPerformed
 
@@ -194,8 +193,7 @@ public class JPanelFtpMenu extends javax.swing.JPanel
         }
         catch (IOException ex)
         {
-            ex.printStackTrace();
-            appendText("\nUnable to get list");
+            setText("Connection to server lost. Please reconnect.");
         }
     }//GEN-LAST:event_ListButtonActionPerformed
 
@@ -206,12 +204,11 @@ public class JPanelFtpMenu extends javax.swing.JPanel
             if (handler.saveFile(inputTextField.getText()))
                 appendText("\n" + inputTextField.getText() + " retrieved succesfuly");
             else
-                appendText("\n550 Failed to open file.");
+                appendText("\nFailed to open file.");
         }
         catch (IOException ex)
         {
-            ex.printStackTrace();
-            appendText("\n550 Failed to open file.");
+            setText("Connection to server lost. Please reconnect.");
         }
     }//GEN-LAST:event_GetButtonActionPerformed
 
@@ -225,8 +222,7 @@ public class JPanelFtpMenu extends javax.swing.JPanel
         }
         catch (IOException ex)
         {
-            ex.printStackTrace();
-            appendText("\nUnable to send command");
+            setText("Connection to server lost. Please reconnect.");
         }
     }//GEN-LAST:event_SendButtonActionPerformed
 

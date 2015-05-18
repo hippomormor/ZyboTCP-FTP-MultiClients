@@ -14,10 +14,12 @@ public class MenuHandler implements Runnable
     private int totalTime;
     private JPanelCreator jpc;
 
-    public MenuHandler(String ip)
+    public MenuHandler(String ip) throws InterruptedException
     {
         this.ip = ip;
-        //tcpUp = true;
+        tcpUp = false;
+        ftpUp = false;
+        jpc = new JPanelCreator(ip);
     }
 
     public String testUpState()
@@ -33,11 +35,10 @@ public class MenuHandler implements Runnable
     }
 
     // Paint FTP window:
-    public void runFtp(String ip) throws InterruptedException, IOException
+    public void runFtp(String ip) throws IOException, InterruptedException
     {
         if (ftpUp)
         {
-            jpc = new JPanelCreator(ip);
             jpc.paintFtp();
         }
     }
@@ -47,7 +48,6 @@ public class MenuHandler implements Runnable
     {
         if (tcpUp)
         {
-            jpc = new JPanelCreator(ip);
             jpc.paintTcp();
         }
     }
@@ -129,22 +129,23 @@ public class MenuHandler implements Runnable
             {               
                 tcpUp = isTcpUp(InetAddress.getByName(ip));
                 if (!tcpUp)
-                    try
-                    {
-                        jpc.setTextTcp("Connection to server lost. Please reconnect.");
-                    }
-                    catch (Exception e)
-                    {
-                        
-                    }
-                ftpUp = isFtpUp(InetAddress.getByName(ip));            
+                {
+                    jpc.setTextTcp("Connection to server lost. Please reconnect.");
+                    jpc.disconnectTcp();
+                }
+                ftpUp = isFtpUp(InetAddress.getByName(ip));
+                if (!ftpUp)
+                {
+                    jpc.setTextFtp("Connection to server lost. Please reconnect.");
+                    jpc.disconnectFtp();
+                }
                 Thread.sleep(3000);
             }
             catch (IOException | InterruptedException ex)
             {
                 ex.printStackTrace();
+                break;
             }
-
         }
     }
 }
