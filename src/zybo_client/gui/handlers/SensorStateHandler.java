@@ -17,7 +17,6 @@ public class SensorStateHandler implements Runnable
     @Override
     public void run()
     {
-
         while (true)
         {
             try
@@ -30,7 +29,6 @@ public class SensorStateHandler implements Runnable
                 break;
             }
         }
-
     }
     
     public String getStates()
