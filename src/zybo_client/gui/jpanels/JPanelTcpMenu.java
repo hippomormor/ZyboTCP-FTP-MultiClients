@@ -458,7 +458,6 @@ public class JPanelTcpMenu extends javax.swing.JPanel
             catch (IOException ex)
             {
                 setText("Connection to server lost. Please reconnect.");
-                appendText("\nUnable to stop sensor(s)");
             }
         }
     }//GEN-LAST:event_StopButtonActionPerformed
@@ -504,31 +503,34 @@ public class JPanelTcpMenu extends javax.swing.JPanel
     {
         Component button = null;
         String states = ssHandler.getStates();
-        for (int i = 1; i < 6; i++)
+        if (!states.equals("null"))
         {
-            Color color = Color.RED;
-            if (states.contains(i + ""))
-                color = Color.GREEN;
-            switch (i)
+            for (int i = 1; i < 6; i++)
             {
-                case 1:
-                    button = jRadioButton1;
-                    break;
-                case 2:
-                    button = jRadioButton2;
-                    break;
-                case 3:
-                    button = jRadioButton3;
-                    break;
-                case 4:
-                    button = jRadioButton4;
-                    break;
-                case 5:
-                    button = jRadioButton5;
-                    break;
+                Color color = Color.RED;
+                if (states.contains(i + ""))
+                    color = Color.GREEN;
+                switch (i)
+                {
+                    case 1:
+                        button = jRadioButton1;
+                        break;
+                    case 2:
+                        button = jRadioButton2;
+                        break;
+                    case 3:
+                        button = jRadioButton3;
+                        break;
+                    case 4:
+                        button = jRadioButton4;
+                        break;
+                    case 5:
+                        button = jRadioButton5;
+                        break;
+                }
+                paintOval(g, button, color);
+                repaint();
             }
-            paintOval(g, button, color);
-            repaint();
         }
     }
     

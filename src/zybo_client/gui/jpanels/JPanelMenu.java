@@ -41,7 +41,7 @@ public class JPanelMenu extends javax.swing.JPanel implements Runnable
         {
             try
             {
-                // Wait for aprox. 300 * 10 == 3000 ms. (ping timeout is 3000):
+                // Wait for aprox. 300 * 10 == 3000 ms.:
                 Thread.sleep(300);
                 appendText(emojiAsString + " ");
             }
@@ -57,7 +57,7 @@ public class JPanelMenu extends javax.swing.JPanel implements Runnable
             setText(msg);
             try
             {
-                Thread.sleep(3000);
+                Thread.sleep(1000);
             }
             catch (InterruptedException ex)
             {
