@@ -5,8 +5,6 @@ import java.awt.Component;
 import java.awt.Graphics;
 import zybo_client.gui.handlers.TcpMenuHandler;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import zybo_client.gui.handlers.SensorStateHandler;
 
 public class JPanelTcpMenu extends javax.swing.JPanel
@@ -475,13 +473,9 @@ public class JPanelTcpMenu extends javax.swing.JPanel
             appendText("\n" + handler.status());
             paintStates(getGraphics());
         }
-        catch (IOException ex)
+        catch (IOException | InterruptedException ex)
         {
             ex.printStackTrace();
-        }
-        catch (InterruptedException ex)
-        {
-            Logger.getLogger(JPanelTcpMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_StatusButtonActionPerformed
 
