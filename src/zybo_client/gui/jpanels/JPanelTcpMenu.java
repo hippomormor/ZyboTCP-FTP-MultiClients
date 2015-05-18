@@ -305,7 +305,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
         }
         catch (IOException ex)
         {
-            ex.printStackTrace();
+            setText("Connection to server lost. Please reconnect.");
         }
     }//GEN-LAST:event_ListButtonActionPerformed
 
@@ -333,8 +333,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
             }
             catch (IOException ex)
             {
-                ex.printStackTrace();
-                appendText("\nUnable to start sensor(s)");
+                setText("Connection to server lost. Please reconnect.");
             }
         }
     }//GEN-LAST:event_StartButtonActionPerformed
@@ -347,7 +346,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
         }
         catch (IOException ex)
         {
-            ex.printStackTrace();
+            setText("Connection to server lost. Please reconnect.");
         }
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
@@ -395,8 +394,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
             }
             catch (IOException ex)
             {
-                ex.printStackTrace();
-                appendText("\nUnable to change sample rate(s)");
+                setText("Connection to server lost. Please reconnect.");
             }
         }
     }//GEN-LAST:event_SensorPlusButtonActionPerformed
@@ -425,8 +423,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
             }
             catch (IOException ex)
             {
-                ex.printStackTrace();
-                appendText("\nUnable to change sample rate(s)");
+                setText("Connection to server lost. Please reconnect.");
             }
         }
     }//GEN-LAST:event_SensorMinusButtonActionPerformed
@@ -460,7 +457,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
             }
             catch (IOException ex)
             {
-                ex.printStackTrace();
+                setText("Connection to server lost. Please reconnect.");
                 appendText("\nUnable to stop sensor(s)");
             }
         }
@@ -475,7 +472,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
         }
         catch (IOException | InterruptedException ex)
         {
-            ex.printStackTrace();
+            setText("Connection to server lost. Please reconnect.");
         }
     }//GEN-LAST:event_StatusButtonActionPerformed
 
@@ -544,7 +541,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
         }
         catch (IOException | InterruptedException ex)
         {
-            ex.printStackTrace();
+            setText("Connection to server lost. Please reconnect.");
         }
     }
 

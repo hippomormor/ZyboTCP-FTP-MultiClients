@@ -135,7 +135,7 @@ public class MenuHandler implements Runnable
                     }
                     catch (Exception e)
                     {
-                        System.out.println("yay");
+                        
                     }
                 ftpUp = isFtpUp(InetAddress.getByName(ip));            
                 Thread.sleep(3000);
