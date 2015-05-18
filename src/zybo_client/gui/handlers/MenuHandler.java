@@ -121,7 +121,7 @@ public class MenuHandler implements Runnable
        return status;
     }
 
-    // Loop checking server reachability every 5 seconds:
+    // Loop checking server reachability every 3 seconds:
     @Override
     public void run()
     {
@@ -131,7 +131,7 @@ public class MenuHandler implements Runnable
             {               
                 tcpUp = isTcpUp(InetAddress.getByName(ip));
                 ftpUp = isFtpUp(InetAddress.getByName(ip));            
-                Thread.sleep(1000);
+                Thread.sleep(3000);
             }
             catch (IOException | InterruptedException ex)
             {
