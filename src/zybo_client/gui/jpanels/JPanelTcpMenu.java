@@ -334,7 +334,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
             catch (IOException ex)
             {
                 ex.printStackTrace();
-                appendText("Unable to start sensor(s)");
+                appendText("\nUnable to start sensor(s)");
             }
         }
     }//GEN-LAST:event_StartButtonActionPerformed

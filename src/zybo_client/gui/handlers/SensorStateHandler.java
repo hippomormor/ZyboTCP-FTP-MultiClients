@@ -1,8 +1,6 @@
 package zybo_client.gui.handlers;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import zybo_client.tcp.TcpHandler;
 
 public class SensorStateHandler implements Runnable
@@ -28,7 +26,12 @@ public class SensorStateHandler implements Runnable
                 sensors = tcp.send("GSTAT");
                 Thread.sleep(300);
             }
-            catch (IOException | InterruptedException ex)
+            catch (IOException ex)
+            {
+                System.out.println("Server down. Please reconnect.");
+                break;
+            } 
+            catch (InterruptedException ex) 
             {
                 ex.printStackTrace();
             }

@@ -174,7 +174,6 @@
         <Property name="text" type="java.lang.String" value="Sensor 2"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
-        <Property name="rolloverEnabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton2ActionPerformed"/>
@@ -185,7 +184,6 @@
         <Property name="text" type="java.lang.String" value="Sensor 3"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
-        <Property name="rolloverEnabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton3ActionPerformed"/>
@@ -196,7 +194,6 @@
         <Property name="text" type="java.lang.String" value="Sensor 4"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
-        <Property name="rolloverEnabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton4ActionPerformed"/>
@@ -207,7 +204,6 @@
         <Property name="text" type="java.lang.String" value="Sensor 5"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
-        <Property name="rolloverEnabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton5ActionPerformed"/>
@@ -238,7 +234,6 @@
         <Property name="text" type="java.lang.String" value="Sensor 1"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
-        <Property name="rolloverEnabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton1ActionPerformed"/>
