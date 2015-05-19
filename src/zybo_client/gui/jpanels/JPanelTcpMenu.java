@@ -381,14 +381,12 @@ public class JPanelTcpMenu extends javax.swing.JPanel
                 if (state)
                 {
                     String data = handler.incrSensor(i);
-                    if (!data.equals("MAX"))
+                    if (data.equals("MAX"))
                     {
-                        appendText("\n" + data);
+                        appendText("\nSensor is at highest sample rate");                        
                     }
                     else
-                    {
-                        appendText("\nSensor is at highest sample rate");
-                    }
+                        appendText("\n" + data);
                 }
                 i++;
             }
@@ -410,14 +408,12 @@ public class JPanelTcpMenu extends javax.swing.JPanel
                 if (state)
                 {
                     String data = handler.decrSensor(i);
-                    if (!data.equals("MIN"))
+                    if (data.equals("MIN"))
                     {
-                        appendText("\n" + data);
+                        appendText("\nSensor is at lowest sample rate");                       
                     }
                     else
-                    {
-                        appendText("\nSensor is at lowest sample rate");
-                    }
+                        appendText("\n" + data);
                 }
                 i++;
             }
