@@ -26,7 +26,7 @@ public class JPanelCreator
 
     public void paintMain() throws InterruptedException
     {
-        mainPanel = new JPanelMenu(ip);
+        mainPanel = new JPanelMenu(ip, this);
         JFrame vindue = new JFrame("Zybo TCP/FTP Connector");
         vindue.add(mainPanel);
         // Get screen size:

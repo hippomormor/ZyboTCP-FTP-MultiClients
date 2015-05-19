@@ -14,12 +14,12 @@ public class MenuHandler implements Runnable
     private int totalTime;
     private JPanelCreator jpc;
 
-    public MenuHandler(String ip) throws InterruptedException
+    public MenuHandler(String ip, JPanelCreator jpc) throws InterruptedException
     {
         this.ip = ip;
         tcpUp = false;
         ftpUp = false;
-        jpc = new JPanelCreator(ip);
+        this.jpc = jpc;
     }
 
     public String testUpState()

@@ -3,6 +3,7 @@ package zybo_client.gui.jpanels;
 import zybo_client.gui.handlers.MenuHandler;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import zybo_client.gui.handlers.JPanelCreator;
 
 public class JPanelMenu extends javax.swing.JPanel implements Runnable
 {
@@ -12,11 +13,11 @@ public class JPanelMenu extends javax.swing.JPanel implements Runnable
     private static boolean isOpenFtp;
     private static boolean isOpenTcp;
 
-    public JPanelMenu(String ip) throws InterruptedException
+    public JPanelMenu(String ip, JPanelCreator jpc) throws InterruptedException
     {
         this.ip = ip;
         // Create MenuHandler:
-        handler = new MenuHandler(ip);
+        handler = new MenuHandler(ip, jpc);
         initComponents();
         isOpenFtp = false;
         isOpenTcp = false;
