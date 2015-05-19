@@ -119,6 +119,7 @@ public class SensorHandler
             if (t.getName().equals(sensorNumber + ""))
             {
                 String answer = "Unsuccessful, sensor already active.";
+                System.out.println(answer);
                 return answer;
             }
         }
