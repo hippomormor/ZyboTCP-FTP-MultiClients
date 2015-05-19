@@ -47,20 +47,20 @@ public class SensorHandler
             if (sensors.get(sensorNumber - 1).sampleRate <= 2048)
             {
                 sensors.get(sensorNumber - 1).sampleRate = (2 * sensors.get(sensorNumber - 1).sampleRate);
-                String answer = "Successful, Sensor " + sensorNumber + " now has an update rate of " + sensors.get(sensorNumber - 1).sampleRate + " Seconds";
+                String answer = "Successful, Sensor " + sensorNumber + " now has an update rate of " + sensors.get(sensorNumber - 1).sampleRate + " Seconds.";
                 System.out.println(answer);
                 return answer;
             }
             else
             {
-                String answer = "Sensor " + sensorNumber + " is at highest sample rate";
+                String answer = "Sensor " + sensorNumber + " is at highest sample rate.";
                 System.out.println(answer);
                 return answer;
             }
         }
         else
         {
-            String answer = "Unsuccessful, no sensor with the value " + sensorNumber;
+            String answer = "Unsuccessful, no sensor with the value " + sensorNumber + ".";
             System.out.println(answer);
             return answer;
         }
@@ -73,20 +73,20 @@ public class SensorHandler
             if (sensors.get(sensorNumber - 1).sampleRate > 1)
             {
                 sensors.get(sensorNumber - 1).sampleRate = (sensors.get(sensorNumber - 1).sampleRate / 2);
-                String answer = "Successful, Sensor " + sensorNumber + " now has an update rate of " + sensors.get(sensorNumber - 1).sampleRate + " Seconds";
+                String answer = "Successful, Sensor " + sensorNumber + " now has an update rate of " + sensors.get(sensorNumber - 1).sampleRate + " Seconds.";
                 System.out.println(answer);
                 return answer;
             }
             else
             {
-                String answer = "Sensor " + sensorNumber + " is at lowest sample rate";
+                String answer = "Sensor " + sensorNumber + " is at lowest sample rate.";
                 System.out.println(answer);
                 return answer;
             }
         }
         else
         {
-            String answer = "Unsuccessful, no sensor with the value " + sensorNumber;
+            String answer = "Unsuccessful, no sensor with the value " + sensorNumber + ".";
             System.out.println(answer);
             return answer;
         }
@@ -101,7 +101,7 @@ public class SensorHandler
                 if (t.getName().equals(sensorNumber + ""))
                 {
                     t.interrupt();
-                    String answer = "Successful, Sensor " + sensorNumber + " has been stopped";
+                    String answer = "Successful, Sensor " + sensorNumber + " has been stopped.";
                     System.out.println(answer);
                     return answer;
                 }
@@ -129,7 +129,7 @@ public class SensorHandler
             Thread sh = new Thread(sample, sensorNumber + "");
             sh.start();
 
-            String answer = "Successful, Sensor " + sensorNumber + " has started logging with an update rate of " + sensors.get(sensorNumber - 1).sampleRate + " Seconds";
+            String answer = "Successful, Sensor " + sensorNumber + " has started logging with an update rate of " + sensors.get(sensorNumber - 1).sampleRate + " Seconds.";
             System.out.println(answer);
             return answer;
         }
@@ -172,7 +172,7 @@ public class SensorHandler
             for (int i = 1; i < 6; i++)
             {
                 if ((i + "").equals(t.getName()))
-                    answer = answer + "Sensor " + t.getName() + " is active. ";
+                    answer = answer + "Sensor " + t.getName() + " is active.";
             }
         }
         if (answer.isEmpty())
