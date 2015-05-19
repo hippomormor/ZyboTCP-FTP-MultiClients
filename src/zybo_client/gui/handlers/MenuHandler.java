@@ -119,7 +119,7 @@ public class MenuHandler implements Runnable
        return status;
     }
 
-    // Loop checking server reachability every 1 seconds:
+    // Loop checking server reachability every 3 seconds:
     @Override
     public void run()
     {
@@ -139,7 +139,7 @@ public class MenuHandler implements Runnable
                     jpc.setTextFtp("Connection to server lost. Please reconnect.");
                     jpc.disconnectFtp();
                 }
-                Thread.sleep(1000);
+                Thread.sleep(3000);
             }
             catch (IOException | InterruptedException ex)
             {
