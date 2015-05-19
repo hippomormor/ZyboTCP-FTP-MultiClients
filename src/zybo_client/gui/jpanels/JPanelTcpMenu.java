@@ -530,6 +530,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
         }
     }
     
+    @Override
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
