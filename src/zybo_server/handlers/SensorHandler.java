@@ -52,7 +52,11 @@ public class SensorHandler
                 return answer;
             }
             else
-                return "MAX";
+            {
+                String answer = "Sensor " + sensorNumber + " is at highest sample rate";
+                System.out.println(answer);
+                return answer;
+            }
         }
         else
         {
@@ -74,7 +78,11 @@ public class SensorHandler
                 return answer;
             }
             else
-                return "MIN";
+            {
+                String answer = "Sensor " + sensorNumber + " is at lowest sample rate";
+                System.out.println(answer);
+                return answer;
+            }
         }
         else
         {

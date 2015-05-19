@@ -321,13 +321,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
                 {
                     String data = handler.start(i);
                     if (!data.equals("null"))
-                    {
                         appendText("\n" + data);
-                    }
-                    else
-                    {
-                        appendText("\nUnable to start sensor(s)");
-                    }
                 }
                 i++;
             }
@@ -381,11 +375,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
                 if (state)
                 {
                     String data = handler.incrSensor(i);
-                    if (data.equals("MAX"))
-                    {
-                        appendText("\nSensor is at highest sample rate");                        
-                    }
-                    else
+                    if (!data.equals("null"))
                         appendText("\n" + data);
                 }
                 i++;
@@ -408,12 +398,8 @@ public class JPanelTcpMenu extends javax.swing.JPanel
                 if (state)
                 {
                     String data = handler.decrSensor(i);
-                    if (data.equals("MIN"))
-                    {
-                        appendText("\nSensor is at lowest sample rate");                       
-                    }
-                    else
-                        appendText("\n" + data);
+                    if (!data.equals("null"))
+                        appendText("\n" + data);                                            
                 }
                 i++;
             }
@@ -441,13 +427,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
                 {
                     String data = handler.stop(i);
                     if (!data.equals("null"))
-                    {
                         appendText("\n" + data);
-                    }
-                    else
-                    {
-                        appendText("\nUnable to stop sensor(s)");
-                    }
                 }
                 i++;
             }
