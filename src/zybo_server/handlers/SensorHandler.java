@@ -51,6 +51,8 @@ public class SensorHandler
                 System.out.println(answer);
                 return answer;
             }
+            else
+                return "MAX";
         }
         else
         {
@@ -58,7 +60,6 @@ public class SensorHandler
             System.out.println(answer);
             return answer;
         }
-        return null;
     }
 
     public String decrease(int sensorNumber)
@@ -72,14 +73,15 @@ public class SensorHandler
                 System.out.println(answer);
                 return answer;
             }
+            else
+                return "MIN";
         }
         else
         {
-            String answer = "Unsuccessful, no sensor with that value. Try to print list of sensors.";
+            String answer = "Unsuccessful, no sensor with the value " + sensorNumber;
             System.out.println(answer);
             return answer;
         }
-        return null;
     }
 
     public String stop(int sensorNumber) throws InterruptedException

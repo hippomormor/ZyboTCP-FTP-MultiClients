@@ -381,7 +381,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
                 if (state)
                 {
                     String data = handler.incrSensor(i);
-                    if (!data.equals("null"))
+                    if (!data.equals("MAX"))
                     {
                         appendText("\n" + data);
                     }
@@ -410,7 +410,7 @@ public class JPanelTcpMenu extends javax.swing.JPanel
                 if (state)
                 {
                     String data = handler.decrSensor(i);
-                    if (!data.equals("null"))
+                    if (!data.equals("MIN"))
                     {
                         appendText("\n" + data);
                     }
