@@ -130,13 +130,15 @@ public class MenuHandler implements Runnable
                 tcpUp = isTcpUp(InetAddress.getByName(ip));
                 if (!tcpUp)
                 {
-                    jpc.setTextTcp("Connection to server lost. Please reconnect.");
+                    jpc.setTextTcp("Connection to server lost. "
+                            + "Please reconnect.");
                     jpc.disconnectTcp();
                 }
                 ftpUp = isFtpUp(InetAddress.getByName(ip));
                 if (!ftpUp)
                 {
-                    jpc.setTextFtp("Connection to server lost. Please reconnect.");
+                    jpc.setTextFtp("Connection to server lost. "
+                            + "Please reconnect.");
                     jpc.disconnectFtp();
                 }
                 Thread.sleep(1000);
