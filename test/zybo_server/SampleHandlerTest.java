@@ -66,7 +66,8 @@ public class SampleHandlerTest
             if (t.getName().equals(name))
             {
                 t.interrupt();
-                System.out.println("Running thread with name '" + t.getName() + "' found");
+                System.out.println("Running thread with name '" + t.getName() + 
+                        "' found");
                 result = t.getName();
             }
         }

@@ -15,7 +15,8 @@ public class ConnectionHandler implements Runnable
     private SensorHandler sensor;
     private final int port;
 
-    public ConnectionHandler(int port, SocketHandler socketHandler) throws IOException
+    public ConnectionHandler(int port, SocketHandler socketHandler) 
+            throws IOException
     {
         this.port = port;
         this.socketHandler = socketHandler;
@@ -28,19 +29,22 @@ public class ConnectionHandler implements Runnable
             String clientSentence;
             while (true)
             {
-                System.out.println("\n" + date.format(new Date()) + " - Client connected on port " + port);
+                System.out.println("\n" + date.format(new Date()) + 
+                        " - Client connected on port " + port);
                 sensor = new SensorHandler();
                 while (true)
                 {                   
                     clientSentence = socketHandler.readLine();
                     if (clientSentence == null)
                     {
-                        System.out.println("\n" + date.format(new Date()) + " - Client has disconnected from port " + port);
+                        System.out.println("\n" + date.format(new Date()) + 
+                                " - Client has disconnected from port " + port);
                         socketHandler.disconnect();
                         break;
                     }
                     if (!clientSentence.equals("GSTAT"))
-                        System.out.println("\n" + date.format(new Date()) + " - Recieved: " + clientSentence);
+                        System.out.println("\n" + date.format(new Date()) + 
+                                " - Recieved: " + clientSentence);
                     
                     serverCommand(sensor, clientSentence);
                 }
@@ -49,7 +53,6 @@ public class ConnectionHandler implements Runnable
         }
         catch (SocketException ex)
         {
-            //ex.printStackTrace();
             System.out.println("Socket closed.");
             socketHandler.disconnect();
         }
@@ -59,9 +62,9 @@ public class ConnectionHandler implements Runnable
         }
         catch (IOException ex)
         {
-            System.out.println("\n" + date.format(new Date()) + " - Client has disconnected from port " + port);
+            System.out.println("\n" + date.format(new Date()) + 
+                    " - Client has disconnected from port " + port);
             socketHandler.disconnect();
-            //ex.printStackTrace();
         }
     }
     

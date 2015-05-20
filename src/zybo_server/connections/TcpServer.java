@@ -39,13 +39,16 @@ public class TcpServer implements Runnable
         while (true)
         {
             ServerSocket welcomeSocket = new ServerSocket(port);
-            System.out.println("\n" + date.format(new Date()) + " - Ready for connections on port " + port);
+            System.out.println("\n" + date.format(new Date()) + " - "
+                    + "Ready for connections on port " + port);
             while (true)
             {
                 Socket connectionSocket = welcomeSocket.accept();
                 socketHandler = new SocketHandler(connectionSocket);
-                System.out.println("\n" + date.format(new Date()) + " - Client connecting on port " + port);                
-                ConnectionHandler ch = new ConnectionHandler(port, socketHandler);
+                System.out.println("\n" + date.format(new Date()) + " - "
+                        + "Client connecting on port " + port);                
+                ConnectionHandler ch = 
+                        new ConnectionHandler(port, socketHandler);
                 Thread t1 = new Thread(ch);
                 t1.start();
             }           

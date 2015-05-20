@@ -19,7 +19,8 @@ public class SocketHandler
     }
     
     // Constructor-method used for getPassivSocket() (FtpHandler.java): 
-    public SocketHandler(SocketHandler socketHandler, int port) throws IOException
+    public SocketHandler(SocketHandler socketHandler, int port) 
+            throws IOException
     {
         this(new Socket(socketHandler.socket.getInetAddress(), port));
     }
@@ -69,3 +70,7 @@ public class SocketHandler
 
     } 
 }
+
+
+
+

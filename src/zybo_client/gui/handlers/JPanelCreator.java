@@ -37,7 +37,8 @@ public class JPanelCreator
         // Set window size:
         vindue.setSize(485, 427);
         // Calculate centre:
-        vindue.setLocation(((screenWidth / 2) - vindue.getWidth() / 2), ((screenHeight / 2) - vindue.getHeight() / 2));
+        vindue.setLocation(((screenWidth / 2) - vindue.getWidth() / 2), 
+                ((screenHeight / 2) - vindue.getHeight() / 2));
         vindue.setVisible(true);
         // Add windowListener to check for window closing; then exit:
         vindue.addWindowListener(new WindowAdapter()
@@ -92,9 +93,11 @@ public class JPanelCreator
         // Set window size:
         vindue.setSize(940, 600);
         // Calculate centre:
-        vindue.setLocation(((screenWidth / 2) - vindue.getWidth() / 2), ((screenHeight / 2) - vindue.getHeight() / 2));
+        vindue.setLocation(((screenWidth / 2) - vindue.getWidth() / 2), 
+                ((screenHeight / 2) - vindue.getHeight() / 2));
         vindue.setVisible(true);       
-        // Add windowListener to check for window closing; if true then disconnect socket and notify user:
+        /* Add windowListener to check for window closing; 
+            if true then disconnect socket and notify user: */
         vindue.addWindowListener(new WindowAdapter()
         {
             @Override

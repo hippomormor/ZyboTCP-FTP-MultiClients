@@ -20,7 +20,8 @@ public class FtpHandler extends SocketHandler
         String msg = "";
         while (true)
         {
-            // Run loop until last line from server (when message is 3 numbers without a following '-'):
+            /* Run loop until last line from server 
+                (when message is 3 numbers without a following '-'): */
             String input = super.readLine();
             System.out.println(input);
             msg = msg + "\n" + input;
@@ -32,7 +33,8 @@ public class FtpHandler extends SocketHandler
         }
     }
     
-    public boolean connect(String ip, String user, String pass) throws IOException
+    public boolean connect(String ip, String user, String pass) 
+            throws IOException
     {           
         readLine();
         send("USER " + user);
@@ -48,7 +50,8 @@ public class FtpHandler extends SocketHandler
         // Append tokens with ',':
         StringTokenizer st = new StringTokenizer(adress, "(,)");
         if (st.countTokens() < 7)
-            throw new IOException("Message received does not follow the regular 7-token syntax (MSG.IP.IP.IP.IP.PORT.PORT");
+            throw new IOException("Message received does not follow "
+                    + "the regular 7-token syntax (MSG.IP.IP.IP.IP.PORT.PORT");
         // Saving the first five tokens (Message + ip-adress):
         for (int i = 0; i < 5; i++)
             st.nextToken();
