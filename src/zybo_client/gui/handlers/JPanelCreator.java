@@ -75,7 +75,7 @@ public class JPanelCreator
                 ftpPanel.disconnect();
                 System.out.println("FTP connection closed");
                 mainPanel.appendText("\n\nFTP connection closed");
-                mainPanel.setFtpOpen();
+                mainPanel.setFtpOpen(false);
             }       
         });    
     }
@@ -106,7 +106,7 @@ public class JPanelCreator
                 tcpPanel.disconnect();
                 System.out.println("TCP connection closed");
                 mainPanel.appendText("\n\nTCP connection closed");
-                mainPanel.setTcpOpen();
+                mainPanel.setTcpOpen(false);
             }       
         });
     }

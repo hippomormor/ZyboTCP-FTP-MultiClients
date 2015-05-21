@@ -169,7 +169,7 @@ public class JPanelMenu extends javax.swing.JPanel implements Runnable
             try
             {
                 handler.runFtp(ip);
-                setFtpOpen();
+                setFtpOpen(true);
             }
             catch (InterruptedException ex)
             {
@@ -195,7 +195,7 @@ public class JPanelMenu extends javax.swing.JPanel implements Runnable
             try
             {
                 handler.runTcp(ip);
-                setTcpOpen();
+                setTcpOpen(true);
             }
             catch (InterruptedException ex)
             {
@@ -220,14 +220,14 @@ public class JPanelMenu extends javax.swing.JPanel implements Runnable
         jTextArea.append(in);
     }
     
-    public void setTcpOpen()
+    public void setTcpOpen(boolean open)
     {
-        isOpenTcp = !isOpenTcp;
+        isOpenTcp = open;
     }
      
-    public void setFtpOpen()
+    public void setFtpOpen(boolean open)
     {
-        isOpenFtp = !isOpenFtp;
+        isOpenFtp = open;
     }
     
     public boolean getTcpOpen()

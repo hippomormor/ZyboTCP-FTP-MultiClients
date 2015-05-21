@@ -445,9 +445,13 @@ public class JPanelTcpMenu extends javax.swing.JPanel
             appendText("\n" + handler.status());
             paintStates(getGraphics());
         }
-        catch (IOException | InterruptedException ex)
+        catch (IOException ex)
         {
             setText("Connection to server lost. Please reconnect.");
+        }
+        catch (InterruptedException ex)
+        {
+            ex.printStackTrace();
         }
     }//GEN-LAST:event_StatusButtonActionPerformed
 
@@ -518,9 +522,13 @@ public class JPanelTcpMenu extends javax.swing.JPanel
         {
             paintStates(g);
         }
-        catch (IOException | InterruptedException ex)
+        catch (IOException ex)
         {
             setText("Connection to server lost. Please reconnect.");
+        }
+        catch (InterruptedException ex)
+        {
+            ex.printStackTrace();
         }
     }
 
